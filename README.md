@@ -5,11 +5,11 @@ Trang web chính thức giới thiệu dự án môn học **SSA101 – Learning
 ---
 
 ## 👥 Nhóm Tác Giả (Five Stars ★★★★★)
-1. **Vũ Tiến Dũng** (MSSV: HE211181) – Phụ trách Nội dung
-2. **Nguyễn Phúc Ngọc Trúc** (MSSV: HE211342) – Phụ trách Nội dung
-3. **Nguyễn Văn Trường** (MSSV: HE211244) – Thiết kế Slide
-4. **Trần Lê Nhật Khánh** (MSSV: HE211523) – Thiết kế Slide
-5. **Nguyễn Quang Minh** (MSSV: HE211010) – Thiết kế Slide
+1. **Vũ Tiến Dũng** (MSSV: HE211181)
+2. **Nguyễn Phúc Ngọc Trúc** (MSSV: HE211342)
+3. **Nguyễn Văn Trường** (MSSV: HE211244)
+4. **Trần Lê Nhật Khánh** (MSSV: HE211523)
+5. **Nguyễn Quang Minh** (MSSV: HE211010)
 
 ---
 
@@ -33,25 +33,3 @@ Trang web được sắp xếp đúng theo cấu trúc yêu cầu của đề á
    * Nút bấm dẫn tới Google Form (sẵn sàng gắn link khi nhóm có link chính thức).
 7. **Danh Mục Tài Liệu Tham Khảo (9 nguồn trích dẫn):**
    * Freeman et al. (PNAS 2014), WEF 2025, Mind Tools, Mike Caulfield SIFT, UNESCO 2024 AI Framework, IxDF, Khảo sát sinh viên FPTU 2026.
-
----
-
-## 🔍 Cách Xem Tiến Trình Trong Lúc Chỉnh Sửa
-* **Cách đơn giản nhất:** Mở file `index.html` trong trình duyệt bất kỳ. Mỗi khi có thay đổi, bạn chỉ cần nhấn **F5** (hoặc `Ctrl + R` / nút Tải lại trang) trên trình duyệt để thấy ngay kết quả mới nhất.
-* **Cách mở local server:**
-  ```powershell
-  cd C:\Users\truon\.gemini\antigravity\scratch\ssa-course-website
-  python -m http.server 3000
-  ```
-  Sau đó mở `http://localhost:3000`.
-
----
-
-## 🌐 Sau Khi Hoàn Thành, Đưa Website Lên Mạng (Hosting & Tên Miền) Có Dễ Không?
-**CỰC KỲ DỄ DÀNG VÀ HOÀN TOÀN MIỄN PHÍ:**
-1. **Nền tảng triển khai miễn phí (Vercel / Netlify / GitHub Pages / Cloudflare Pages):**
-   * Do trang web được viết bằng HTML/CSS/JS thuần, bạn chỉ cần kéo thả toàn bộ thư mục này lên **Netlify Drop** (tại [app.netlify.com/drop](https://app.netlify.com/drop)) hoặc kết nối qua GitHub với **Vercel**.
-   * Thời gian xuất bản: **Chỉ mất chưa đầy 1 phút**.
-   * Bạn sẽ nhận ngay một địa chỉ web trực tuyến hoạt động 24/7 (Ví dụ: `fivestars-ssa101.vercel.app` hoặc `duan-fivestars.netlify.app`), có sẵn chứng chỉ bảo mật SSL (`https://`).
-2. **Nếu muốn gắn tên miền riêng (Ví dụ: `fivestars.vn` hoặc `fivestars.com`):**
-   * Bạn chỉ cần mua tên miền tại các nhà cung cấp (như iNet, Mắt Bão, Namecheap, Cloudflare,...) và vào phần cài đặt tên miền của Vercel/Netlify để trỏ DNS. Mình sẽ hướng dẫn chi tiết từng bước khi nhóm bạn sẵn sàng!
