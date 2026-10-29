@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // 3. YouTube Video Embed / Lazy Load Player
-    let currentVideoId = 'qTaOH1XSbiQ';
+    let currentVideoId = 'xNAjUr6fPsg';
     const videoThumbnailLayer = document.getElementById('video-thumbnail-layer');
     const togglePreviewBtn = document.getElementById('toggle-preview-btn');
     const youtubeInputBox = document.getElementById('youtube-input-box');
@@ -81,6 +81,14 @@ document.addEventListener('DOMContentLoaded', () => {
             return false;
         }
         currentVideoId = videoId;
+        const thumbImg = document.getElementById('video-thumb-img');
+        if (thumbImg) {
+            thumbImg.src = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
+        }
+        const directYtLink = document.getElementById('direct-youtube-link');
+        if (directYtLink) {
+            directYtLink.href = `https://youtube.com/shorts/${videoId}`;
+        }
         playVideo(currentVideoId);
         return true;
     };
@@ -105,10 +113,6 @@ document.addEventListener('DOMContentLoaded', () => {
         customYoutubeUrl.addEventListener('keypress', (e) => {
             if (e.key === 'Enter') {
                 e.stopPropagation();
-                applyVideoBtn.click();
-            }
-        });
-    }
                 applyVideoBtn.click();
             }
         });
