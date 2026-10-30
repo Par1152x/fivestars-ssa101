@@ -1,10 +1,9 @@
-/* Custom Styles for Five Stars - SSA101 Course Website */
-
 html {
     scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: #1e293b #070b14;
 }
 
-/* Custom Scrollbar */
 ::-webkit-scrollbar {
     width: 7px;
 }
@@ -22,7 +21,6 @@ html {
     background: #F26F21;
 }
 
-/* Typography - Prevent Orphan Words Across All Browsers */
 h1, h2, h3, h4, h5, h6 {
     text-wrap: balance;
 }
@@ -31,28 +29,10 @@ p, li, .text-pretty {
     text-wrap: pretty;
 }
 
-/* Subtle fade in animations */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.animate-fade-in {
-    animation: fadeIn 0.7s ease-out forwards;
-}
-
-/* Table styling polish */
 table th, table td {
     vertical-align: middle;
 }
 
-/* Starfield slow gentle drift */
 @keyframes starDrift {
     0% {
         background-position: 0 0;
@@ -65,4 +45,13 @@ table th, table td {
 .animate-star-drift {
     animation: starDrift 160s linear infinite;
     will-change: background-position;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, ::before, ::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
 }

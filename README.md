@@ -69,10 +69,10 @@ Website chính thức của đề án môn học **SSA101 (Kỹ năng học tậ
 
 ```text
 ssa-course-website/
-├── index.html                  # Mã nguồn giao diện chính (HTML5 Semantic, Tailwind CSS)
+├── index.html                  # Mã nguồn giao diện chính
 ├── style.css                   # Định kiểu thanh cuộn & hiệu ứng nền
 ├── script.js                   # Xử lý hoạt ảnh Canvas starfield & video player
-├── video-thumbnail.jpg         # Ảnh bìa 16:9 sắc nét cho video chiêu sinh
+├── video-thumbnail.jpg         # Ảnh bìa cho video chiêu sinh
 ├── registration-bg.png         # Họa tiết nền khu vực đăng ký
 ├── registration-stars-alpha.png# Lớp phủ sao đêm trong suốt
 ├── stars-pattern.png           # Họa tiết sao nền toàn trang

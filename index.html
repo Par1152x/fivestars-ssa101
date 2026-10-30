@@ -3,12 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Dự Án Tư Duy Giải Quyết Vấn Đề (SSA101) - Nhóm Five Stars, Trường Đại học FPT. Khóa học thực chiến rèn luyện phương pháp 5W1H, 5 Whys, SIFT và AI có trách nhiệm.">
+    <meta name="theme-color" content="#070b14">
     <title>Dự Án Tư Duy Giải Quyết Vấn Đề | Nhóm Five Stars - SSA101 FPT University</title>
-    <!-- Google Fonts -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23FBBF24'%3E%3Cpolygon points='12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2'/%3E%3C/svg%3E">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <!-- Tailwind CSS CDN -->
+
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -40,35 +43,31 @@
             }
         }
     </script>
-    <!-- Lucide Icons -->
+
     <script src="https://unpkg.com/lucide@latest"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="bg-[#070b14] text-slate-100 font-sans selection:bg-brand-orange selection:text-white antialiased overflow-x-hidden">
 
-    <!-- Unified Subtle Background Ambient Glows & Starfield Canvas -->
     <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
-        <!-- Subtle Star Texture Layer (Từ ảnh mẫu của bạn - trôi nhẹ nhàng) -->
+
         <div class="absolute inset-0 opacity-[0.12] mix-blend-screen bg-repeat pointer-events-none animate-star-drift" style="background-image: url('stars-pattern.png'); background-size: 360px;"></div>
 
-        <!-- Canvas Sao Lấp Lánh & Sao Băng Rơi Màu Vàng (Hiệu ứng động 60fps) -->
         <canvas id="starfield-canvas" class="absolute inset-0 w-full h-full pointer-events-none"></canvas>
 
-        <!-- Ambient Warm Glows -->
         <div class="absolute -top-40 -left-40 w-[32rem] h-[32rem] bg-brand-orange/8 rounded-full blur-[160px]"></div>
         <div class="absolute top-1/3 -right-40 w-[30rem] h-[30rem] bg-brand-amber/6 rounded-full blur-[160px]"></div>
         <div class="absolute bottom-1/4 left-1/3 w-[36rem] h-[36rem] bg-brand-orange/5 rounded-full blur-[180px]"></div>
     </div>
 
-    <!-- Top Sticky Header Navigation -->
     <header class="sticky top-0 z-50 backdrop-blur-xl bg-[#070b14]/90 border-b border-slate-800/80 transition-all duration-300" id="navbar">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
-                <!-- Left Side: Brand Logo with Golden Star (Đã bỏ khung và chữ SSA101) -->
+
                 <a href="#hero" class="flex items-center gap-3 group shrink-0">
                     <div class="w-11 h-11 rounded-xl bg-gradient-to-tr from-brand-orange to-brand-amberLight p-[2px] shadow-lg shadow-brand-orange/20 transition-transform group-hover:scale-105">
                         <div class="w-full h-full bg-[#0a0f1d] rounded-[10px] flex items-center justify-center">
-                            <!-- Golden Star Icon -->
+
                             <svg class="w-6 h-6 text-brand-amberLight fill-brand-amberLight filter drop-shadow-[0_0_8px_rgba(251,191,36,0.65)]" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
                                 <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
                             </svg>
@@ -82,9 +81,8 @@
                     </div>
                 </a>
 
-                <!-- Right Side: Navigation Menu (Sát bên trái nút Đăng ký) & Top CTA Button -->
                 <div class="flex items-center gap-6 xl:gap-8">
-                    <!-- Desktop Menu -->
+
                     <nav class="hidden lg:flex items-center gap-6 xl:gap-7 text-sm font-medium text-slate-300">
                         <a href="#hero" class="hover:text-brand-orangeLight transition-colors">Trang chủ</a>
                         <a href="#video-section" class="hover:text-brand-orangeLight transition-colors">Video Chiêu Sinh</a>
@@ -93,16 +91,14 @@
                         <a href="#commitments" class="hover:text-brand-orangeLight transition-colors">Cam Kết</a>
                     </nav>
 
-                    <!-- Top CTA Button -->
                     <div class="hidden sm:flex items-center">
                         <a href="https://forms.gle/rmNN4VMm8QDY4aqs6" target="_blank" rel="noopener noreferrer" class="px-5 py-2.5 rounded-xl text-xs sm:text-sm font-semibold text-white bg-gradient-to-r from-brand-orange to-brand-amber hover:from-brand-orangeDark hover:to-brand-orange shadow-lg shadow-brand-orange/20 transition-all duration-300 hover:-translate-y-0.5 whitespace-nowrap">
                             <span>Đăng ký tham gia</span>
                         </a>
                     </div>
 
-                    <!-- Mobile Menu Button -->
                     <div class="lg:hidden flex items-center">
-                        <button id="mobile-menu-btn" type="button" class="text-slate-300 hover:text-white p-2 rounded-lg bg-slate-800/60 border border-slate-700">
+                        <button id="mobile-menu-btn" type="button" aria-label="Mở menu điều hướng" aria-expanded="false" aria-controls="mobile-menu" class="text-slate-300 hover:text-white p-2 rounded-lg bg-slate-800/60 border border-slate-700">
                             <i data-lucide="menu" id="menu-icon" class="w-6 h-6"></i>
                         </button>
                     </div>
@@ -110,7 +106,6 @@
             </div>
         </div>
 
-        <!-- Mobile Menu Dropdown -->
         <div id="mobile-menu" class="hidden lg:hidden border-b border-slate-800 bg-[#070b14]/98 backdrop-blur-2xl px-4 pt-3 pb-6 space-y-2.5">
             <a href="#hero" class="block px-3 py-2 rounded-lg text-sm font-medium text-slate-200 hover:bg-slate-800 mobile-nav-link">Trang chủ</a>
             <a href="#video-section" class="block px-3 py-2 rounded-lg text-sm font-medium text-slate-200 hover:bg-slate-800 mobile-nav-link">Video Chiêu Sinh</a>
@@ -127,39 +122,33 @@
 
     <main class="relative z-10">
 
-        <!-- 1. HERO SECTION: CÂU CHỦ ĐỀ, GIỚI THIỆU NHÓM & 2 NÚT BẤM -->
         <section id="hero" class="pt-14 pb-20 sm:pt-24 sm:pb-28">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                
-                <!-- Main Subject Title (Sử dụng phông Be Vietnam Pro clean, thanh thoát, khoảng cách 2 câu hài hòa vừa vặn) -->
+
                 <h1 class="text-3xl sm:text-5xl lg:text-[3.5rem] font-extrabold tracking-tight text-white mb-6 leading-[1.28] sm:leading-[1.3] max-w-4xl mx-auto font-heading text-balance">
                     <span class="block">DỰ ÁN RÈN LUYỆN PHÁT TRIỂN</span>
                     <span class="block mt-1 sm:mt-1.5 bg-gradient-to-r from-brand-amberLight via-brand-orange to-brand-amber bg-clip-text text-transparent">TƯ DUY GIẢI QUYẾT VẤN ĐỀ</span>
                 </h1>
 
-                <!-- Subtitle / Short Pitch (Khôi phục lại như cũ: chuẩn 2 dòng tự nhiên) -->
                 <p class="text-base sm:text-lg text-slate-300 max-w-3xl mx-auto mb-10 leading-relaxed font-normal text-pretty text-center">
                     Trang bị bộ công cụ tư duy bài bản từ nhận diện vấn đề đến kiểm chứng thông tin đa chiều,<br class="hidden sm:inline">
                     giúp sinh viên tự tin sáng tạo giải pháp khả thi trước mọi thách thức trong kỷ nguyên số và AI.
                 </p>
 
-                <!-- 2 Action Buttons (Cân đối hoàn hảo về kích thước, chiều rộng và vị trí) -->
                 <div class="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-md mx-auto mb-16">
-                    <!-- Nút 1: Đăng ký tham gia -->
+
                     <a href="https://forms.gle/rmNN4VMm8QDY4aqs6" target="_blank" rel="noopener noreferrer" class="w-full sm:w-52 inline-flex items-center justify-center py-3.5 px-6 rounded-xl font-bold text-sm sm:text-base text-white bg-gradient-to-r from-brand-orange via-brand-amber to-brand-orangeDark hover:opacity-95 shadow-xl shadow-brand-orange/25 border border-transparent transition-all duration-300 hover:-translate-y-0.5 text-center">
                         Đăng ký tham gia
                     </a>
-                    <!-- Nút 2: Video chiêu sinh -->
+
                     <a href="#video-section" class="w-full sm:w-52 inline-flex items-center justify-center py-3.5 px-6 rounded-xl font-semibold text-sm sm:text-base text-slate-200 bg-slate-800/80 hover:bg-slate-700/80 border border-slate-700 hover:border-brand-orange/40 transition-all duration-300 text-center">
                         Video chiêu sinh
                     </a>
                 </div>
 
-                <!-- GIỚI THIỆU NHÓM TÁC GIẢ FIVE STARS (Tối giản bảng màu đồng nhất) -->
                 <div id="team" class="max-w-5xl mx-auto text-left rounded-3xl bg-slate-900/60 border border-slate-800 p-6 sm:p-8 backdrop-blur-xl shadow-2xl relative overflow-hidden">
                     <div class="absolute -top-12 -right-12 w-48 h-48 bg-brand-orange/10 rounded-full blur-3xl pointer-events-none"></div>
-                    
-                    <!-- Header tiêu đề nhóm (Đã bỏ hình thức học và 5 ngôi sao) -->
+
                     <div class="border-b border-slate-800/80 pb-4 mb-6">
                         <div class="text-xs font-bold text-brand-amberLight uppercase tracking-widest mb-1">
                             Nhóm tác giả đề tài
@@ -169,43 +158,36 @@
                         </h2>
                     </div>
 
-                    <!-- Layout 2 cột: Danh sách 5 thành viên hàng dọc (trái, không khung) & Phần thông điệp dài bằng nhau (phải) -->
                     <div class="grid grid-cols-1 md:grid-cols-12 gap-6 lg:gap-8 items-stretch">
-                        
-                        <!-- Cột trái: List hàng dọc 5 thành viên (Không khung riêng, tối giản, cân đối) -->
+
                         <div class="md:col-span-5 lg:col-span-4 flex flex-col justify-between py-1">
-                            <!-- Thành viên 1 -->
+
                             <div class="flex items-center gap-3 py-1">
                                 <span class="font-mono text-xs font-bold text-brand-orange w-5 shrink-0">01</span>
                                 <h3 class="text-sm sm:text-base font-semibold text-slate-200">Vũ Tiến Dũng</h3>
                             </div>
 
-                            <!-- Thành viên 2 -->
                             <div class="flex items-center gap-3 py-1">
                                 <span class="font-mono text-xs font-bold text-brand-orange w-5 shrink-0">02</span>
                                 <h3 class="text-sm sm:text-base font-semibold text-slate-200">Nguyễn Phúc Ngọc Trúc</h3>
                             </div>
 
-                            <!-- Thành viên 3 -->
                             <div class="flex items-center gap-3 py-1">
                                 <span class="font-mono text-xs font-bold text-brand-orange w-5 shrink-0">03</span>
                                 <h3 class="text-sm sm:text-base font-semibold text-slate-200">Nguyễn Văn Trường</h3>
                             </div>
 
-                            <!-- Thành viên 4 -->
                             <div class="flex items-center gap-3 py-1">
                                 <span class="font-mono text-xs font-bold text-brand-orange w-5 shrink-0">04</span>
                                 <h3 class="text-sm sm:text-base font-semibold text-slate-200">Trần Lê Nhật Khánh</h3>
                             </div>
 
-                            <!-- Thành viên 5 -->
                             <div class="flex items-center gap-3 py-1">
                                 <span class="font-mono text-xs font-bold text-brand-orange w-5 shrink-0">05</span>
                                 <h3 class="text-sm sm:text-base font-semibold text-slate-200">Nguyễn Quang Minh</h3>
                             </div>
                         </div>
 
-                        <!-- Cột phải: Phần thông điệp (chiếm nhiều diện tích hơn, dài khớp với danh sách tên, không khoảng trống thừa) -->
                         <div class="md:col-span-7 lg:col-span-8 p-5 sm:p-6 rounded-2xl bg-slate-900/80 border border-slate-800 flex flex-col justify-center">
                             <p class="font-semibold text-brand-amberLight text-sm mb-2.5 flex items-center gap-2">
                                 <span class="w-2 h-2 rounded-full bg-brand-orange inline-block"></span>
@@ -222,10 +204,9 @@
             </div>
         </section>
 
-        <!-- 2. PHẦN VIDEO CHIÊU SINH -->
         <section id="video-section" class="py-16 bg-slate-900/40 border-y border-slate-800/60 relative">
             <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-                <!-- Section Header (Đồng nhất tối giản) -->
+
                 <div class="text-center max-w-2xl mx-auto mb-10">
                     <h2 class="text-2xl sm:text-4xl font-bold text-white mb-3 font-display text-balance">
                         Video Chiêu Sinh Dự Án Five&nbsp;Stars
@@ -235,22 +216,22 @@
                     </p>
                 </div>
 
-                <!-- Video Frame Container -->
                 <div class="relative rounded-2xl overflow-hidden p-1.5 bg-gradient-to-b from-slate-700 via-slate-800 to-slate-900 shadow-2xl shadow-black/60">
                     <div class="relative w-full aspect-video rounded-xl overflow-hidden bg-slate-950 flex flex-col items-center justify-center text-center group cursor-pointer" id="video-display-area">
-                        
-                        <!-- Thumbnail Overlay (Bấm vào phát video ngay) -->
+
                         <div id="video-thumbnail-layer" class="absolute inset-0 z-20 cursor-pointer overflow-hidden group">
-                            <!-- Ảnh Thumbnail sắc nét chuẩn 16:9 (hiển thị trọn vẹn 5 thành viên, không bị co méo do video Shorts) -->
-                            <img id="video-thumb-img" 
-                                 src="video-thumbnail.jpg" 
-                                 alt="Video Chiêu Sinh Five Stars SSA101" 
+
+                            <img id="video-thumb-img"
+                                 src="video-thumbnail.jpg"
+                                 alt="Video Chiêu Sinh Five Stars SSA101"
+                                 width="1280"
+                                 height="720"
+                                 fetchpriority="high"
+                                 decoding="async"
                                  class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
 
-                            <!-- Lớp phủ bóng mờ tương phản cao khi hover -->
                             <div class="absolute inset-0 bg-slate-950/20 group-hover:bg-slate-950/40 transition-colors duration-300 pointer-events-none"></div>
 
-                            <!-- Center Animated Play Button (Luôn căn chính giữa hoàn hảo) -->
                             <div class="absolute inset-0 flex flex-col items-center justify-center pointer-events-none z-10">
                                 <div class="relative">
                                     <div class="absolute -inset-4 rounded-full bg-brand-orange/40 blur-lg group-hover:bg-brand-orange/70 animate-pulse"></div>
@@ -266,7 +247,6 @@
                             </div>
                         </div>
 
-                        <!-- Iframe Container khi người dùng load video -->
                         <div id="iframe-wrapper" class="hidden w-full h-full absolute inset-0 z-10"></div>
                     </div>
                 </div>
@@ -279,10 +259,9 @@
             </div>
         </section>
 
-        <!-- 3. MỤC BỐI CẢNH VÀ LÝ DO CHỌN ĐỀ TÀI -->
         <section id="context" class="py-20">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                
+
                 <div class="text-center max-w-3xl mx-auto mb-16">
                     <h2 class="text-3xl sm:text-4xl font-bold text-white mb-4 font-display text-balance">
                         Bối Cảnh & Lý Do Chọn Đề&nbsp;Án
@@ -293,8 +272,7 @@
                 </div>
 
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 items-stretch mb-12">
-                    
-                    <!-- Khảo sát thực tế 34 sinh viên FPT (Mục dữ liệu: khung bằng với 2 trọng tâm) -->
+
                     <div class="rounded-2xl bg-slate-900/80 border border-slate-800 p-6 sm:p-8 flex flex-col justify-between h-full">
                         <div class="border-b border-slate-800 pb-4 mb-6">
                             <h3 class="text-base sm:text-lg font-bold text-white">
@@ -303,9 +281,8 @@
                             <p class="text-xs text-slate-400 mt-1">Dữ liệu sơ cấp từ 34 sinh viên: "Những khó khăn trong học tập & phát triển bản thân"</p>
                         </div>
 
-                        <!-- Visual breakdown bars (Đồng nhất tone màu phân cấp: Nổi bật số 1, các số sau theo tone trầm thanh lịch) -->
                         <div class="space-y-4 text-xs sm:text-sm">
-                            <!-- 1. Thiếu động lực học tập (Vướng mắc lớn nhất - Nổi bật) -->
+
                             <div>
                                 <div class="flex justify-between items-center mb-1.5 font-medium">
                                     <span class="text-slate-200">
@@ -318,7 +295,6 @@
                                 </div>
                             </div>
 
-                            <!-- 2. Cách tận dụng AI -->
                             <div>
                                 <div class="flex justify-between items-center mb-1.5 font-medium">
                                     <span class="text-slate-300">
@@ -331,7 +307,6 @@
                                 </div>
                             </div>
 
-                            <!-- 3. Áp lực khi làm việc nhóm -->
                             <div>
                                 <div class="flex justify-between items-center mb-1.5 font-medium">
                                     <span class="text-slate-300">
@@ -344,7 +319,6 @@
                                 </div>
                             </div>
 
-                            <!-- 4. Quản lý thời gian -->
                             <div>
                                 <div class="flex justify-between items-center mb-1.5 font-medium">
                                     <span class="text-slate-400">
@@ -357,7 +331,6 @@
                                 </div>
                             </div>
 
-                            <!-- 5. Kỹ năng tự học -->
                             <div>
                                 <div class="flex justify-between items-center mb-1.5 font-medium">
                                     <span class="text-slate-400">
@@ -377,7 +350,6 @@
                         </div>
                     </div>
 
-                    <!-- Lời giải từ Five Stars (Right side: 2 khung trọng tâm khớp chiều cao & độ rộng với mục dữ liệu) -->
                     <div class="flex flex-col gap-5 sm:gap-6 h-full">
                         <div class="flex-1 p-6 sm:p-7 rounded-2xl bg-slate-900/80 border border-slate-800 flex flex-col justify-center">
                             <span class="text-xs font-mono font-bold uppercase tracking-wider text-brand-orangeLight mb-2 block">TRỌNG TÂM 01</span>
@@ -401,10 +373,9 @@
             </div>
         </section>
 
-        <!-- 4. CHI TIẾT CÁC BUỔI HỌC (BẢNG TỔNG HỢP TINH GỌN MÀU SẮC) -->
         <section id="schedule" class="py-20 bg-slate-900/30 border-t border-slate-800/80">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                
+
                 <div class="text-center max-w-3xl mx-auto mb-12 sm:mb-14">
                     <h2 class="text-3xl sm:text-4xl font-bold text-white mb-3 sm:mb-4 font-display text-balance">
                         Lộ Trình 4 Buổi Học Khóa "Tư Duy Giải Quyết Vấn&nbsp;Đề"
@@ -414,7 +385,6 @@
                     </p>
                 </div>
 
-                <!-- BẢNG TỔNG HỢP CHI TIẾT CÁC BUỔI HỌC -->
                 <div class="rounded-2xl border border-slate-800 bg-slate-900/90 overflow-hidden shadow-2xl mb-12">
                     <div class="overflow-x-auto">
                         <table class="w-full text-left border-collapse text-sm">
@@ -427,8 +397,7 @@
                                 </tr>
                             </thead>
                             <tbody class="divide-y divide-slate-800 text-slate-300 text-xs sm:text-sm">
-                                
-                                <!-- Buổi 1 -->
+
                                 <tr class="hover:bg-slate-800/40 transition-colors">
                                     <td class="py-4 px-4 sm:px-6 text-center font-bold text-brand-orangeLight">
                                         <span class="w-8 h-8 rounded-lg bg-brand-orange/15 border border-brand-orange/30 inline-flex items-center justify-center">01</span>
@@ -448,7 +417,6 @@
                                     </td>
                                 </tr>
 
-                                <!-- Buổi 2 -->
                                 <tr class="hover:bg-slate-800/40 transition-colors">
                                     <td class="py-4 px-4 sm:px-6 text-center font-bold text-brand-orangeLight">
                                         <span class="w-8 h-8 rounded-lg bg-brand-orange/15 border border-brand-orange/30 inline-flex items-center justify-center">02</span>
@@ -468,7 +436,6 @@
                                     </td>
                                 </tr>
 
-                                <!-- Buổi 3 -->
                                 <tr class="hover:bg-slate-800/40 transition-colors">
                                     <td class="py-4 px-4 sm:px-6 text-center font-bold text-brand-orangeLight">
                                         <span class="w-8 h-8 rounded-lg bg-brand-orange/15 border border-brand-orange/30 inline-flex items-center justify-center">03</span>
@@ -488,7 +455,6 @@
                                     </td>
                                 </tr>
 
-                                <!-- Buổi 4 -->
                                 <tr class="hover:bg-slate-800/40 transition-colors">
                                     <td class="py-4 px-4 sm:px-6 text-center font-bold text-brand-orangeLight">
                                         <span class="w-8 h-8 rounded-lg bg-brand-orange/15 border border-brand-orange/30 inline-flex items-center justify-center">04</span>
@@ -513,7 +479,6 @@
                     </div>
                 </div>
 
-                <!-- 4 Trụ cột phương pháp đào tạo -->
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
                     <div class="p-4 sm:p-5 rounded-xl bg-slate-800/40 border border-slate-700/60 flex flex-col justify-between hover:border-brand-orange/40 transition-colors">
                         <div>
@@ -552,10 +517,9 @@
             </div>
         </section>
 
-        <!-- 5. MỤC CAM KẾT CỦA NHÓM FIVE STARS (ĐỒNG NHẤT MÀU SẮC CHUYÊN NGHIỆP) -->
         <section id="commitments" class="py-20">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                
+
                 <div class="text-center max-w-2xl mx-auto mb-12 sm:mb-14">
                     <h2 class="text-3xl sm:text-4xl font-bold text-white mb-3 sm:mb-4 font-display text-balance">
                         Cam Kết Của Nhóm Five&nbsp;Stars
@@ -566,8 +530,7 @@
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    
-                    <!-- Cam kết 1: Nội dung -->
+
                     <div class="p-6 rounded-2xl bg-slate-900/70 border border-slate-800 hover:border-brand-orange/40 transition-all flex flex-col justify-between">
                         <div>
                             <div class="flex items-center justify-between mb-3">
@@ -583,7 +546,6 @@
                         </div>
                     </div>
 
-                    <!-- Cam kết 2: Tính trung thực khảo sát -->
                     <div class="p-6 rounded-2xl bg-slate-900/70 border border-slate-800 hover:border-brand-orange/40 transition-all flex flex-col justify-between">
                         <div>
                             <div class="flex items-center justify-between mb-3">
@@ -599,7 +561,6 @@
                         </div>
                     </div>
 
-                    <!-- Cam kết 3: Trách nhiệm triển khai -->
                     <div class="p-6 rounded-2xl bg-slate-900/70 border border-slate-800 hover:border-brand-orange/40 transition-all flex flex-col justify-between">
                         <div>
                             <div class="flex items-center justify-between mb-3">
@@ -615,7 +576,6 @@
                         </div>
                     </div>
 
-                    <!-- Cam kết 4: Về người học -->
                     <div class="p-6 rounded-2xl bg-slate-900/70 border border-slate-800 hover:border-brand-orange/40 transition-all flex flex-col justify-between">
                         <div>
                             <div class="flex items-center justify-between mb-3">
@@ -631,7 +591,6 @@
                         </div>
                     </div>
 
-                    <!-- Cam kết 5: Về sử dụng AI -->
                     <div class="p-6 rounded-2xl bg-slate-900/70 border border-slate-800 hover:border-brand-orange/40 transition-all flex flex-col justify-between">
                         <div>
                             <div class="flex items-center justify-between mb-3">
@@ -647,7 +606,6 @@
                         </div>
                     </div>
 
-                    <!-- Cam kết 6: Tiếp nhận góp ý -->
                     <div class="p-6 rounded-2xl bg-slate-900/70 border border-slate-800 hover:border-brand-orange/40 transition-all flex flex-col justify-between">
                         <div>
                             <div class="flex items-center justify-between mb-3">
@@ -668,18 +626,16 @@
             </div>
         </section>
 
-        <!-- 6. KHU VỰC FORM ĐĂNG KÝ -->
         <section id="registration" class="py-20 relative overflow-hidden border-t border-slate-800/80">
-            <!-- Nền sao mờ nguyên bản theo đúng ảnh mẫu bạn tải lên -->
+
             <div class="absolute inset-0 bg-repeat pointer-events-none opacity-80 mix-blend-screen animate-star-drift" style="background-image: url('registration-bg.png'); background-size: 260px;"></div>
             <div class="absolute inset-0 bg-repeat pointer-events-none opacity-60 mix-blend-screen" style="background-image: url('registration-stars-alpha.png'); background-size: 260px;"></div>
 
-            <!-- Warm Ambient Auras for Registration Area -->
             <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[40rem] h-[40rem] bg-brand-orange/8 rounded-full blur-[150px] pointer-events-none"></div>
             <div class="absolute -top-10 right-1/4 w-[24rem] h-[24rem] bg-brand-amber/8 rounded-full blur-[130px] pointer-events-none"></div>
 
             <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                
+
                 <div class="text-center max-w-2xl mx-auto mb-10 sm:mb-12">
                     <h2 class="text-3xl sm:text-4xl font-extrabold text-white mb-3 font-display text-balance">
                         Đăng Ký Khóa Học Five&nbsp;Stars
@@ -689,9 +645,8 @@
                     </p>
                 </div>
 
-                <!-- Google Form Card Container (Thu gọn chiều dài cân đối, kính mờ hiển thị nền sao) -->
                 <div class="rounded-3xl bg-slate-900/60 border border-slate-800 hover:border-brand-orange/40 p-6 sm:p-8 shadow-2xl backdrop-blur-xl relative overflow-hidden transition-all duration-300">
-                    <!-- Subtle card inner glow -->
+
                     <div class="absolute -top-20 -right-20 w-44 h-44 bg-brand-orange/15 rounded-full blur-3xl pointer-events-none"></div>
                     <div class="absolute -bottom-20 -left-20 w-44 h-44 bg-brand-amber/10 rounded-full blur-3xl pointer-events-none"></div>
 
@@ -700,18 +655,10 @@
                             Biểu Mẫu Đăng Ký Trực Tuyến
                         </h3>
 
-                        <!-- Nút bấm thu gọn chiều dài, vừa vặn cân đối -->
                         <div class="flex justify-center">
                             <a id="google-form-link-btn" href="https://forms.gle/rmNN4VMm8QDY4aqs6" target="_blank" rel="noopener noreferrer" class="w-auto px-10 py-3.5 rounded-xl font-bold text-white bg-gradient-to-r from-brand-orange via-brand-amber to-brand-orangeDark hover:opacity-95 shadow-xl shadow-brand-orange/25 transition-all duration-300 hover:-translate-y-0.5 inline-flex items-center justify-center text-sm sm:text-base">
                                 Mở Form Đăng Ký
                             </a>
-                        </div>
-                    </div>
-
-                    <!-- Embed Iframe Container Placeholder (Khi cần nhúng trực tiếp) -->
-                    <div id="google-form-embed-wrapper" class="hidden mt-8 pt-8 border-t border-slate-800">
-                        <div class="w-full min-h-[500px] rounded-xl border border-dashed border-slate-700 bg-slate-950/80 flex flex-col items-center justify-center text-center p-6">
-                            <p class="text-xs text-slate-400">Khung nhúng Google Form sẵn sàng hiển thị khi dán iframe.</p>
                         </div>
                     </div>
                 </div>
@@ -719,11 +666,9 @@
             </div>
         </section>
 
-        <!-- 7. DANH MỤC TRÍCH DẪN & TÀI LIỆU THAM KHẢO (ĐỒNG NHẤT TONE MÀU) -->
         <section id="references" class="py-14 bg-slate-950/40 backdrop-blur-sm border-t border-slate-800/80 relative">
             <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-                
-                <!-- Minimal Header -->
+
                 <div class="flex flex-col sm:flex-row sm:items-baseline justify-between border-b border-slate-800/90 pb-3 mb-6 gap-2">
                     <div>
                         <h2 class="text-lg sm:text-xl font-bold text-white font-display">
@@ -734,10 +679,8 @@
                     <span class="text-[11px] font-mono text-slate-500">9 nguồn trích dẫn</span>
                 </div>
 
-                <!-- Minimalist Academic List: 1 Cột dọc duy nhất theo yêu cầu -->
                 <div class="space-y-3.5 text-xs text-slate-400 max-w-4xl">
-                    
-                    <!-- 1 -->
+
                     <div class="flex items-start gap-2.5 group">
                         <span class="font-mono text-brand-orange font-bold text-[11px] shrink-0 pt-0.5">[1]</span>
                         <div class="leading-relaxed">
@@ -747,7 +690,6 @@
                         </div>
                     </div>
 
-                    <!-- 2 -->
                     <div class="flex items-start gap-2.5 group">
                         <span class="font-mono text-brand-orange font-bold text-[11px] shrink-0 pt-0.5">[2]</span>
                         <div class="leading-relaxed">
@@ -757,7 +699,6 @@
                         </div>
                     </div>
 
-                    <!-- 3 -->
                     <div class="flex items-start gap-2.5 group">
                         <span class="font-mono text-brand-orange font-bold text-[11px] shrink-0 pt-0.5">[3]</span>
                         <div class="leading-relaxed">
@@ -767,7 +708,6 @@
                         </div>
                     </div>
 
-                    <!-- 4 -->
                     <div class="flex items-start gap-2.5 group">
                         <span class="font-mono text-brand-orange font-bold text-[11px] shrink-0 pt-0.5">[4]</span>
                         <div class="leading-relaxed">
@@ -777,7 +717,6 @@
                         </div>
                     </div>
 
-                    <!-- 5 -->
                     <div class="flex items-start gap-2.5 group">
                         <span class="font-mono text-brand-orange font-bold text-[11px] shrink-0 pt-0.5">[5]</span>
                         <div class="leading-relaxed">
@@ -787,7 +726,6 @@
                         </div>
                     </div>
 
-                    <!-- 6 -->
                     <div class="flex items-start gap-2.5 group">
                         <span class="font-mono text-brand-orange font-bold text-[11px] shrink-0 pt-0.5">[6]</span>
                         <div class="leading-relaxed">
@@ -797,7 +735,6 @@
                         </div>
                     </div>
 
-                    <!-- 7 -->
                     <div class="flex items-start gap-2.5 group">
                         <span class="font-mono text-brand-orange font-bold text-[11px] shrink-0 pt-0.5">[7]</span>
                         <div class="leading-relaxed">
@@ -807,7 +744,6 @@
                         </div>
                     </div>
 
-                    <!-- 8 -->
                     <div class="flex items-start gap-2.5 group">
                         <span class="font-mono text-brand-orange font-bold text-[11px] shrink-0 pt-0.5">[8]</span>
                         <div class="leading-relaxed">
@@ -817,7 +753,6 @@
                         </div>
                     </div>
 
-                    <!-- 9 -->
                     <div class="flex items-start gap-2.5 group">
                         <span class="font-mono text-brand-orange font-bold text-[11px] shrink-0 pt-0.5">[9]</span>
                         <div class="leading-relaxed">
@@ -833,11 +768,10 @@
 
     </main>
 
-    <!-- FOOTER -->
     <footer class="border-t border-slate-800/80 bg-[#070b14]/80 backdrop-blur-md py-10 text-slate-400 text-xs sm:text-sm relative z-10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col md:flex-row items-center justify-between gap-6">
-                <!-- Brand Logo (Đồng nhất hoàn toàn theo ảnh mẫu bạn gửi) -->
+
                 <a href="#hero" class="flex items-center gap-3 group">
                     <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-orange to-brand-amberLight p-[2px] shadow-lg shadow-brand-orange/20 transition-transform group-hover:scale-105">
                         <div class="w-full h-full bg-[#0a0f1d] rounded-[9px] flex items-center justify-center">
@@ -852,7 +786,6 @@
                     </div>
                 </a>
 
-                <!-- Copyright (Đã xóa phần FPT - Innovation Hub... theo đúng yêu cầu) -->
                 <div class="text-slate-500 text-center md:text-right text-xs">
                     &copy; 2026 Five Stars Project.
                 </div>
@@ -860,7 +793,6 @@
         </div>
     </footer>
 
-    <!-- Scripts -->
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
 </body>
 </html>
